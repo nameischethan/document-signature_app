@@ -76,3 +76,15 @@ def download_document(
         path=document.filepath,
         filename=document.filename
     )
+
+@router.post("/sign")
+def sign_document(
+    document_id: int,
+    signature_id: int
+):
+
+    return {
+        "message": "Document signed successfully",
+        "document_id": document_id,
+        "signature_id": signature_id
+    }

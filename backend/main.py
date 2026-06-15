@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+from models.signature import Signature
 from database import engine
 from models.user import User
 from models.signature import Signature
