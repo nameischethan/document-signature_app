@@ -49,3 +49,28 @@ def list_signatures(
     signatures = db.query(Signature).all()
 
     return signatures
+
+@router.delete("/delete/{signature_id}")
+def delete_signature(
+    signature_id: int,
+    db: Session = Depends(get_db)
+):
+
+    signature = db.query(Signature).filter(
+        Signature.id == signature_id
+    ).first()
+
+    if not signature:
+        return {
+            "message": "Signature not found"
+        }
+
+    if os.path.exists(signature.filepath):
+        os.remove(signature.filepath)
+
+    db.delete(signature)
+    db.commit()
+
+    return {
+        "message": "Signature deleted successfully"
+    }
