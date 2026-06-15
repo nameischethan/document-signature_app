@@ -2,6 +2,8 @@ from fastapi import FastAPI
 
 from database import engine
 from models.user import User
+from models.signature import Signature
+from routers.signature import router as signature_router
 
 from routers.auth import router as auth_router
 from models.document import Document
@@ -23,6 +25,12 @@ app.include_router(
     document_router,
     prefix="/api/document",
     tags=["Document"]
+)
+
+app.include_router(
+    signature_router,
+    prefix="/api/signature",
+    tags=["Signature"]
 )
 
 @app.get("/")
