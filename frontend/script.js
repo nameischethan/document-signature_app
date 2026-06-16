@@ -1,6 +1,6 @@
 console.log("script loaded");
 
-const BASE_URL = "http://127.0.0.1:8000/api";
+const BASE_URL = "https://document-signature-app-n6y9.onrender.com/api";
 
 // Upload Document
 async function uploadDocument() {
