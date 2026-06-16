@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Signature App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>📄 Document Signature App</h1>
+
+        <div class="card">
+            <h2>Upload PDF Document</h2>
+
+            <input type="file" id="pdfFile" accept=".pdf">
+
+            <button type="button" onclick="uploadDocument()">
+              Upload Document
+            </button>
+
+            <p id="documentResult"></p>
+        </div>
+
+        <div class="card">
+            <h2>Upload Signature</h2>
+
+            <input type="file" id="signatureFile" accept="image/*">
+
+            <button type="button" onclick="uploadSignature()">
+               Upload Signature
+            </button>
+
+            <p id="signatureResult"></p>
+        </div>
+
+        <div class="card">
+            <h2>Sign Document</h2>
+
+            <input
+                type="number"
+                id="documentId"
+                placeholder="Document ID"
+            >
+
+            <input
+                type="number"
+                id="signatureId"
+                placeholder="Signature ID"
+            >
+
+            <button type="button" onclick="signDocument()">
+               Sign PDF
+            </button>
+
+            <p id="signResult"></p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
