@@ -1,6 +1,7 @@
 venv/
 __pycache__/
 *.pyc
-signature.db
+*.db
 uploads/
-.env
+backend.zip
+.DS_Store
